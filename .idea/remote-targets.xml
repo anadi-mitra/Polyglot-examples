@@ -10,7 +10,7 @@
           <option name="buildNotPull" value="false" />
           <option name="containerConfig">
             <ContainerConfig>
-              <option name="runCliOptions" value="-p 3000:22 --privileged --cgroup-parent=/docker -d --name anadi-wd --mount type=bind,source=/home/anadi/docker-wd,target=/home/anadi/wd --mount type=bind,source=/home/anadi/.ssh,target=/home/anadi/.ssh  " />
+              <option name="runCliOptions" value="-rm -p 3000:22 --privileged --cgroup-parent=/docker -d --name anadi-wd --mount type=bind,source=/home/anadi/docker-wd,target=/home/anadi/wd --mount type=bind,source=/home/anadi/.ssh,target=/home/anadi/.ssh  " />
             </ContainerConfig>
           </option>
           <option name="pullImageConfig">
