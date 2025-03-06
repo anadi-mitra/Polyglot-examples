@@ -1,6 +1,6 @@
  package org.gammaraylab;
 
- import org.graalvm.nativeimage.PinnedObject;
+// import org.graalvm.nativeimage.PinnedObject;
 
  public class Main {
 
