@@ -15,12 +15,30 @@
 -Dgraal.LogFile=graal.log
 
 --enable-native-access=org.graalvm.truffle
+-XX:+UnlockExperimentalVMOptions
+-XX:+UnlockDiagnosticVMOptions
+-XX:-TieredCompilation
+-Dgraal.ReduceDCE=false
+-Dgraal.LoopUnroll=false
+-Dgraal.Vectorization=false
+-Dgraal.OptDuplication=false
+-Djdk.graal.Vectorization=false
+-Djdk.graal.OptDuplication=false
+-Djdk.graal.TuneInlinerExploration=-1
+
+-XX:CompileThreshold=30000
+-XX:+PrintCompilation
+-XX:+PrintInlining
 
 -XX:-Inline
 -XX:TieredStopAtLevel=1
 –XX:-TieredCompilation
 -XX:-DoEscapeAnalysis
 -XX:VMOptionsFile=./vmoptions.txt
+-XX:CompileCommand=compileonly,org/gammaraylab/.*
+-XX:+UnlockDiagnosticVMOptions
+-XX:+PrintCompilation
+-XX:+PrintInlining
 
 -Dpolyglot.engine.AllowExperimentalOptions=true
 --enable-native-access=org.graalvm.truffle.runtime
