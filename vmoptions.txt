@@ -1,18 +1,11 @@
 -XX:+UnlockExperimentalVMOptions
 -XX:+UnlockDiagnosticVMOptions
--XX:-TieredCompilation
--XX:+UseJVMCICompiler
 -XX:+EnableJVMCI
+-XX:+UseJVMCICompiler
 -XX:+EagerJVMCI
 
--Dgraal.OptScheduleOutOfLoops=false
 -Dgraal.ReduceDCE=false
 -Dgraal.PartialUnroll=false
 -Dgraal.LoopUnswitch=false
 -Dgraal.OptScheduleOutOfLoops=false
 -Dgraal.LoopPeeling=false
-
--XX:CompileThreshold=1
--XX:+PrintCompilation
--XX:-Inline
--Xcomp

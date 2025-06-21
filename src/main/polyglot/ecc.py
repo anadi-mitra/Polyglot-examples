@@ -1,4 +1,4 @@
-#Point shall point to an object of "Point" class
+#"pointFactory" shall refer to an instance of "Point.class"
 
 
 def scalarMultiplication(alpha, generatorPoint):
@@ -15,7 +15,7 @@ def pointDoubling(point):
     # newPoint= Point.newPoint(x,y)   #O1
     # if(newPoint.isValid(point, newPoint)):
     #     return newPoint
-    return Point.newPoint(x,y)  #O2
+    return pointFactory.newPoint(x,y)  #O2
 
 def processList(generatorList, secretKeyList):
     result = []         #O1

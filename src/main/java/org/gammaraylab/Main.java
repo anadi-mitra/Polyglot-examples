@@ -1,14 +1,11 @@
- package org.gammaraylab;
+package org.gammaraylab;
 
-// import org.graalvm.nativeimage.PinnedObject;
+import mircobenchmarks.java.*;
 
- public class Main {
-
-     public static void main(String[] args) throws Exception {
-//     TestCases tc= new TestCases();
-//     tc.passingJavaObj();
-//        tc.testTree();
-         System.out.println("hello world");
-     }
-
- }
+public class Main {
+    public static void main(String[] args) throws Exception {
+//        Test test= new ObjectPassing();
+//        test.runTest();
+        DependencyResolver.print();
+    }
+}
