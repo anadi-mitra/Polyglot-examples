@@ -11,7 +11,7 @@ import java.util.Random;
 simple polyglot calls to python functions
 */
 public class FunctionCalling implements Test{
-    private static final String PYTHON_SRC_FILE_PATH="src/main/java/mircobenchmarks/python_scripts/FunctionCalling.py";
+    private static final String PYTHON_SRC_FILE_PATH="src/main/java/mircobenchmarks/python/FunctionCalling.py";
 
     @Override
     public void runTest(){

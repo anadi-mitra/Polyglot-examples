@@ -2,6 +2,7 @@ package mircobenchmarks.java;
 
 import mircobenchmarks.java.exceptions.KeyNotFoundException;
 import mircobenchmarks.polyglot.PythonContext;
+import org.graalvm.polyglot.HostAccess;
 import org.graalvm.polyglot.Value;
 import org.graalvm.polyglot.proxy.ProxyObject;
 import java.io.File;
@@ -9,7 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 /*
 Passing objects to python functions.
 We are creating 'n' cartesian points and will find the distance between
@@ -18,7 +18,7 @@ The Python function will calculate and return the distance in this case.
 */
 public final class ObjectPassing implements Test{
 
-    private static final String PYTHON_SRC_FILE_PATH="src/main/java/mircobenchmarks/python_scripts/ObjectPassing.py";
+    private static final String PYTHON_SRC_FILE_PATH="src/main/java/mircobenchmarks/python/ObjectPassing.py";
 
     List<ProxyPoint> initList(int n) {
         List<ProxyPoint> list = new ArrayList<>();
@@ -46,17 +46,20 @@ public final class ObjectPassing implements Test{
             Value calc_distance=bindings.getMember("calc_distance");
             Value res;
             Double[] distList= new Double[pointList.size()-1];
-            for(int i=0;i<pointList.size()-1;i++){
+            ProxyPoint a= new ProxyPoint(10,32);
+            ProxyPoint b= new ProxyPoint(121,78);
+
+//            for(int i=0;i<pointList.size()-1;i++){
                 //execute the python function by passing arguments using the polylgot context
-                res=calc_distance.execute(pointList.get(i),pointList.get(i+1));
+                res=calc_distance.execute(a,b);
                 if(res.isNumber())
-                    distList[i]=res.asDouble();
+                    System.out.println(res.asDouble());
                 else if(res.isString())
                     System.out.println(res.asString());
                 else
                     System.err.println(res);
-            }
-            System.out.println(Arrays.toString(distList));
+//            }
+//            System.out.println(Arrays.toString(distList));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -73,6 +76,7 @@ public final class ObjectPassing implements Test{
             this.x = x;
             this.y = y;
         }
+
         //resolves obj.x or obj.y in python
         @Override
         public Object getMember(String key) {
@@ -82,6 +86,7 @@ public final class ObjectPassing implements Test{
                 default -> throw new KeyNotFoundException("key " + key + " is not valid");
             };
         }
+
         //provides a list of available fields to python
         @Override
         public Object getMemberKeys() {

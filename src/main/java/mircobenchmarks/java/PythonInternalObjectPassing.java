@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class PythonInternalObjectPassing implements  Test{
-    private static final String PYTHON_SRC_FILE_PATH="src/main/java/mircobenchmarks/python_scripts/PythonInternalObjectPassing.py";
+    private static final String PYTHON_SRC_FILE_PATH="src/main/java/mircobenchmarks/python/PythonInternalObjectPassing.py";
 
     private ProxyNode createList(int len) {
         ProxyNode head;
