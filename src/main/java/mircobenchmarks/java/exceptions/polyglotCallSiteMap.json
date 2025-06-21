@@ -1,0 +1,16 @@
+{
+  "mircobenchmarks/java/Animal.java": {
+    "foo()V": {
+      "callsites": [
+        {
+          "line": 10,
+          "target": {
+            "source": "external/lib/Utils.java",
+            "method": "calc_distance",
+            "args": ["a", "b"]
+          }
+        }
+      ]
+    }
+  }
+}

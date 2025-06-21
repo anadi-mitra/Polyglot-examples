@@ -1,0 +1,16 @@
+{
+  "mircobenchmarks.java.ObjectPassing": {
+    "runTest()V": {
+      "49": {
+        "binding": "src/main/java/mircobenchmarks/python/ObjectPassing.py",
+        "method": "calc_distance",
+        "argIndex": 0
+      },
+      "50": {
+        "binding": "src/main/java/mircobenchmarks/python/ObjectPassing.py",
+        "method": "calc_distance",
+        "argIndex": 1
+      }
+    }
+  }
+}

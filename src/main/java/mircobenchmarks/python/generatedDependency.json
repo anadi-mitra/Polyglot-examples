@@ -1,0 +1,92 @@
+{
+  "mircobenchmarks/python/ObjectPassing.py": {
+    "%global": [],
+    "calc_distance": {
+      "%vars": [],
+      "%param": {
+        "0": {
+          "escapesTo": [],
+          "resolved": true
+        },
+        "1": {
+          "escapesTo": [],
+          "resolved": true
+        }
+      }
+    },
+    "draw_triangle": {
+      "%vars": [],
+      "%param": {
+        "0": {
+          "escapesTo": [
+            {
+              "source": "mircobenchmarks/python/ObjectPassing.py",
+              "method": "calc_distance",
+              "argIndex": 0
+            },
+            {
+              "source": "mircobenchmarks/python/SomeUserDefClass.Render",
+              "method": "plot",
+              "argIndex": 0
+            }
+          ],
+          "resolved": false
+        },
+        "1": {
+          "escapesTo": [
+            {
+              "source": "mircobenchmarks/python/ObjectPassing.py",
+              "method": "calc_distance",
+              "argIndex": 1
+            },
+            {
+              "source": "mircobenchmarks/python/SomeUserDefClass.Render",
+              "method": "plot",
+              "argIndex": 1
+            }
+          ],
+          "resolved": false
+        },
+        "2": {
+          "escapesTo": [
+            {
+              "source": "mircobenchmarks/python/ObjectPassing.py",
+              "method": "calc_distance",
+              "argIndex": 2
+            },
+            {
+              "source": "mircobenchmarks/python/SomeUserDefClass.Render",
+              "method": "plot",
+              "argIndex": 2
+            }
+          ],
+          "resolved": true
+        }
+      }
+    }
+  },
+  "mircobenchmarks/python/SomeUserDefClass.Render": {
+    "%global": [],
+    "plot": {
+      "%vars": [],
+      "%param": {
+        "0": {
+          "escapesTo": [{
+            "source": "mircobenchmarks/python/PythonInternalObjectPassing/SomeSharedClass",
+            "method": "",
+            "argIndex": -1}
+          ],
+          "resolved": true
+        },
+        "1": {
+          "escapesTo": [],
+          "resolved": true
+        },
+        "2": {
+          "escapesTo": [],
+          "resolved": true
+        }
+      }
+    }
+  }
+}
